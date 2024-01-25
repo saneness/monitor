@@ -48,7 +48,7 @@ def check_memory():
     memory_used = memory.used / 1024 / 1024
     memory_total = memory.total / 1024 / 1024
     value = 100.0 * memory_used / memory_total
-    return value > MAX_MEMORY, f'{value:.2f}% ({memory_used:.1f}GB of {memory_total:.1f}GB)'
+    return value > MAX_MEMORY, f'{value:.2f}% ({memory_used:.1f}MB of {memory_total:.1f}MB)'
 
 def check_disk():
     disk = psutil.disk_usage('/')
