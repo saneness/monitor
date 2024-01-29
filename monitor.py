@@ -72,8 +72,12 @@ def check_openvpn_nl():
 def check_quakejs():
     return check_docker('quakejs')
 
+def check_openai():
+    result = subprocess.check_output(['/usr/local/bin/balance_check']).decode('utf8').strip()
+    return result == 'unknown', result
+
 def check_nadezhdin():
-    result = subprocess.check_output(['/usr/local/bin/nadezhdin']).decode('utf8')[:-1]
+    result = subprocess.check_output(['/usr/local/bin/nadezhdin']).decode('utf8').strip()
     return result.isdigit(), result
 
 monitoring = {
@@ -84,6 +88,7 @@ monitoring = {
     check_tgsanebot:  f'tgsanebot status:',
     check_openvpn_uk: f'openvpn (uk) status:',
 #   check_quakejs:    f'quakejs status:',
+    check_openai:     f'openai status:',
     check_nadezhdin:  f'nadezhdin status:'
 }
 
