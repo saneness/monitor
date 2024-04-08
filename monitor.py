@@ -31,7 +31,7 @@ def check_service_remote(service, host):
     return status in STATUS_WARNING, status
 
 def check_docker(name):
-    containers = json.loads(subprocess.check_output(['sudo', 'docker', 'ps', '--no-trunc', '--format', '{"name":"{{.Names}}", "status":"{{.Status}}"}']).decode("utf-8"))
+    containers = json.loads(subprocess.check_output(['docker', 'ps', '--no-trunc', '--format', '{"name":"{{.Names}}", "status":"{{.Status}}"}']).decode("utf-8"))
     if isinstance(containers, dict):
         containers = [containers]
     for container in containers:
@@ -87,7 +87,7 @@ monitoring = {
     check_nginx:      f'nginx status:',
     check_tgsanebot:  f'tgsanebot status:',
     check_openvpn_uk: f'openvpn (uk) status:',
-#   check_quakejs:    f'quakejs status:',
+    check_quakejs:    f'quakejs status:',
 #   check_nadezhdin:  f'nadezhdin status:',
 #   check_openai:     f'openai status:',
 }
