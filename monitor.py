@@ -80,6 +80,10 @@ def check_nadezhdin():
     result = subprocess.check_output(['/usr/local/bin/nadezhdin']).decode('utf8').strip()
     return result.isdigit(), result
 
+def check_monzo_pot():
+    result = subprocess.check_output(['cat', '/tmp/monzo_pots']).decode('utf8').strip()
+    return False, result
+
 monitoring = {
     check_temp:       f'temperature:',
     check_memory:     f'memory usage:',
@@ -90,6 +94,7 @@ monitoring = {
     check_quakejs:    f'quakejs status:',
 #   check_nadezhdin:  f'nadezhdin status:',
 #   check_openai:     f'openai status:',
+    check_monzo_pot:  f'monzo pot:'
 }
 
 try:
