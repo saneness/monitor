@@ -18,7 +18,6 @@ def pre(text):
 def send_message(text):
     data = json.dumps({"chat_id": CHAT_ID, "text": text, "parse_mode": 'markdown'})
     cmd = f"curl -X POST 'https://api.telegram.org/bot{BOT_TOKEN}/sendMessage' -H 'Content-Type: application/json' -d '{data}'"
-    print(cmd)
     os.system(cmd)
     time.sleep(1)
 
