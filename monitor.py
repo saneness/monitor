@@ -90,7 +90,7 @@ monitoring = {
     check_nginx:      f'nginx status:',
     check_tgsanebot:  f'tgsanebot status:',
     check_openvpn_uk: f'openvpn (uk) status:',
-    check_quakejs:    f'quakejs status:',
+#   check_quakejs:    f'quakejs status:',
 #   check_nadezhdin:  f'nadezhdin status:',
 #   check_openai:     f'openai status:',
     check_monzo_pot:  f'monzo pot:'
