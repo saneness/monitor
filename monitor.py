@@ -65,8 +65,8 @@ def check_tgsanebot():
 def check_openvpn_uk():
     return check_service('openvpn')
 
-def check_openvpn_nl():
-    return check_service_remote(service='openvpn', host='vpnie')
+def check_meet():
+    return check_service('meet')
 
 def check_quakejs():
     return check_docker('quakejs')
@@ -90,6 +90,7 @@ monitoring = {
     check_nginx:      f'nginx status:',
     check_tgsanebot:  f'tgsanebot status:',
     check_openvpn_uk: f'openvpn (uk) status:',
+    check_meet:       f'meet status:',
 #   check_quakejs:    f'quakejs status:',
 #   check_nadezhdin:  f'nadezhdin status:',
 #   check_openai:     f'openai status:',
