@@ -80,8 +80,9 @@ def check_nadezhdin():
     return result.isdigit(), result
 
 def check_monzo_pot():
+    error = False if not os.path.exists('/tmp/monzo_pots_error') else True
     result = subprocess.check_output(['cat', '/tmp/monzo_pots']).decode('utf8').strip()
-    return False, result
+    return error, result
 
 monitoring = {
     check_temp:       f'temperature:',
