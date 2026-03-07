@@ -68,17 +68,6 @@ def check_openvpn_uk():
 def check_meet():
     return check_service('meet')
 
-def check_quakejs():
-    return check_docker('quakejs')
-
-def check_openai():
-    result = subprocess.check_output(['/usr/local/bin/balance_check']).decode('utf8').strip()
-    return result == 'unknown', result
-
-def check_nadezhdin():
-    result = subprocess.check_output(['/usr/local/bin/nadezhdin']).decode('utf8').strip()
-    return result.isdigit(), result
-
 def check_monzo_pot():
     error = False if not os.path.exists('/tmp/monzo_pots_error') else True
     result = subprocess.check_output(['cat', '/tmp/monzo_pots']).decode('utf8').strip()
@@ -92,9 +81,6 @@ monitoring = {
     check_tgsanebot:  f'tgsanebot status:',
     check_openvpn_uk: f'openvpn (uk) status:',
     check_meet:       f'meet status:',
-#   check_quakejs:    f'quakejs status:',
-#   check_nadezhdin:  f'nadezhdin status:',
-#   check_openai:     f'openai status:',
     check_monzo_pot:  f'monzo pot:'
 }
 
