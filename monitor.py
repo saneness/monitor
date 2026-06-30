@@ -73,6 +73,11 @@ def check_monzo_pot():
     result = subprocess.check_output(['cat', '/tmp/monzo_pots']).decode('utf8').strip()
     return error, result
 
+def check_forex_rate():
+    error = False if not os.path.exists('/tmp/forex_rate_error') else True
+    result = subprocess.check_output(['cat', '/tmp/forex_rate']).decode('utf8').strip()
+    return error, result
+
 monitoring = {
     check_temp:       f'temperature:',
     check_memory:     f'memory usage:',
@@ -81,7 +86,8 @@ monitoring = {
     check_tgsanebot:  f'tgsanebot status:',
     check_openvpn_uk: f'openvpn (uk) status:',
     check_meet:       f'meet status:',
-    check_monzo_pot:  f'monzo pot:'
+    check_monzo_pot:  f'monzo pot:',
+    check_forex_rate: f'forex rate:'
 }
 
 try:
