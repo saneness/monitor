@@ -79,15 +79,15 @@ def check_forex_rate():
     return error, result
 
 monitoring = {
-    check_temp:       f'temperature:',
-    check_memory:     f'memory usage:',
-    check_disk:       f'disk usage:',
-    check_nginx:      f'nginx status:',
-    check_tgsanebot:  f'tgsanebot status:',
-    check_openvpn_uk: f'openvpn (uk) status:',
-    check_meet:       f'meet status:',
-    check_monzo_pot:  f'monzo pot:',
-    check_forex_rate: f'forex rate:'
+    check_temp:          f'temperature:',
+    check_memory:        f'memory usage:',
+    check_disk:          f'disk usage:',
+    check_nginx:         f'nginx status:',
+    check_tgsanebot:     f'tgsanebot status:',
+    check_openvpn_uk:    f'openvpn (uk) status:',
+    check_meet:          f'meet status:',
+    check_monzo_pot:     f'monzo pot:',
+    check_currency_rate: f'currecy rate:'
 }
 
 try:
