@@ -73,9 +73,9 @@ def check_monzo_pot():
     result = subprocess.check_output(['cat', '/tmp/monzo_pots']).decode('utf8').strip()
     return error, result
 
-def check_forex_rate():
-    error = False if not os.path.exists('/tmp/forex_rate_error') else True
-    result = subprocess.check_output(['cat', '/tmp/forex_rate']).decode('utf8').strip()
+def check_currency_rate():
+    error = False if not os.path.exists('/tmp/currency_rate_error') else True
+    result = subprocess.check_output(['cat', '/tmp/currency_rate']).decode('utf8').strip()
     return error, result
 
 monitoring = {
