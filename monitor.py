@@ -87,7 +87,7 @@ monitoring = {
     check_openvpn_uk:    f'openvpn (uk) status:',
     check_meet:          f'meet status:',
     check_monzo_pot:     f'monzo pot:',
-    check_currency_rate: f'currecy rate:'
+    check_currency_rate: f'currency rate:'
 }
 
 try:
